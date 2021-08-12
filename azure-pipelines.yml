@@ -5,9 +5,6 @@
 trigger:
 - master
 
-resources:
-- repo: self
-
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'c7f4d397-5bc1-483b-8090-0a8e257a4c62'
@@ -16,6 +13,7 @@ variables:
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
   tag: '$(Build.BuildId)'
 
+pool:
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
